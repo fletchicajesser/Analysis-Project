@@ -54,36 +54,10 @@ B5BEdata(:,3) = 10.^B5BEdata(:,3)
 %% plot the data: always use figure(2) and clf. use xlim to set the lower and higher limits for the x axis
 
 
-figure(3)
-clf
 subplot(1,2,1)
-plot(B5LEdata(:,1), B5LEdata(:,2), 'bo-')
-errorbar(B5LEdata(:,1), B5LEdata(:,2), B5LEdata(:,3),'bo-', 'vertical')
-hold on
-plot(B5REdata(:,1), B5REdata(:,2), 'r*-')
-errorbar(B5REdata(:,1), B5REdata(:,2), B5REdata(:,3),'r*-', 'vertical')
-plot(B5BEdata(:,1), B5BEdata(:,2), 'gs-')
-errorbar(B5BEdata(:,1), B5BEdata(:,2), B5BEdata(:,3),'gs-', 'vertical')
-set(gca,'YScale','log')
-set(gca,'TickDir','out')
-xlim([0 20])
-title('B5')
-xlabel('Radial Frequency')
-ylabel('Threshold (arc sec)')
+plot_function(B5LEdata, B5REdata, B5BEdata, 'B5')
 subplot(1,2,2)
-plot(I4LEdata(:,1), I4LEdata(:,2), 'bo-')
-errorbar(I4LEdata(:,1), I4LEdata(:,2), I4LEdata(:,3),'bo-', 'vertical')
-hold on
-plot(I4REdata(:,1), I4REdata(:,2), 'r*-')
-errorbar(I4REdata(:,1), I4REdata(:,2), I4REdata(:,3),'r*-', 'vertical')
-plot(I4BEdata(:,1), I4BEdata(:,2), 'gs-')
-errorbar(I4BEdata(:,1), I4BEdata(:,2), I4BEdata(:,3),'gs-', 'vertical')
-set(gca,'YScale','log')
-set(gca,'TickDir','out')
-xlim([2 18])
-title('I4')
-xlabel('Radial Frequency')
-ylabel('Threshold (arc sec)')
+plot_function(I4LEdata, I4REdata, I4BEdata, 'I4')
 suptitle('Radial Frequency Thresholds')
 
 round(log(B5LEdata(:,2)./B5REdata(:,2)),2)

@@ -1,7 +1,8 @@
 function plot_function(LEdata, REdata, BEdata, animalID)
 %function plot_function(LEdata, REdata, BEdata, animalID): use data taken
 %from the .log file. column 1 is radial frequencies, column 2 is
-%thresholds, and column 3 is standard error
+%thresholds, and column 3 is standard error. blue is left eye data, red is
+%right eye data, green is both eye data
 figure(3)
 clf
 plot(LEdata(:,1), LEdata(:,2), 'bo-')
